@@ -1,0 +1,11 @@
+Categorical Variable,p-value
+job,0.0
+marital,0.0
+education,0.0
+default,0.0
+housing,0.06
+loan,0.58
+contact,0.0
+month,0.0
+day_of_week,0.0
+poutcome,0.0

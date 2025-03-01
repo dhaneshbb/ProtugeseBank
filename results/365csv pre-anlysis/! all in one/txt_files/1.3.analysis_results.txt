@@ -1,0 +1,42 @@
+Chi-Square Analysis for Categorical Variables:
+  | Categorical Variable   |   p-value |
+  |:-----------------------|----------:|
+  | job                    |      0    |
+  | marital                |      0    |
+  | education              |      0    |
+  | default                |      0    |
+  | housing                |      0.06 |
+  | loan                   |      0.58 |
+  | contact                |      0    |
+  | month                  |      0    |
+  | day_of_week            |      0    |
+  | poutcome               |      0    |
+
+Correlation Analysis for Numerical Variables:
+  | Numerical Variable   |   Pearson |   Spearman |
+  |:---------------------|----------:|-----------:|
+  | age                  |      0.03 |      -0.01 |
+  | duration             |      0.41 |       0.35 |
+  | campaign             |     -0.07 |      -0.06 |
+  | pdays                |     -0.32 |      -0.32 |
+  | previous             |      0.23 |       0.2  |
+  | emp.var.rate         |     -0.3  |      -0.25 |
+  | cons.price.idx       |     -0.14 |      -0.12 |
+  | cons.conf.idx        |      0.05 |       0.04 |
+  | euribor3m            |     -0.31 |      -0.27 |
+  | nr.employed          |     -0.35 |      -0.28 |
+
+Variance Inflation Factor (VIF):
+  | Variable       |      VIF |
+  |:---------------|---------:|
+  | age            |    16.05 |
+  | duration       |     2.44 |
+  | campaign       |     1.92 |
+  | pdays          |    46.38 |
+  | previous       |     2.01 |
+  | emp.var.rate   |    28.95 |
+  | cons.price.idx | 22872.1  |
+  | cons.conf.idx  |   120.85 |
+  | euribor3m      |   226.22 |
+  | nr.employed    | 26984.8  |
+  | y              |     1.67 |

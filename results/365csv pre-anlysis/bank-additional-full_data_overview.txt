@@ -1,0 +1,155 @@
+### dataset_info
+
+
+=== Dataset Information ===
+
+| Info                      | Details                   |
+|---------------------------|---------------------------|
+| Total Shape               | 41188 rows, 21 columns    |
+| Range Index               | 0 to 41187, 41188 entries |
+| Columns                   | 21 columns                |
+| Memory Usage              | 31730895 bytes            |
+| Total Duplicated Rows     | 24 duplicates             |
+| Missing Values Count      | 0 missing values          |
+| Missing Values Percentage | 0.00% missing values      |
+
+Data types with counts of columns:
+
+| Data Type   |   Count of Columns |
+|-------------|--------------------|
+| object      |                 11 |
+| int64       |                  5 |
+| float64     |                  5 |
+
+Numerical and Categorical Variable Counts:
+
+| Variable Type         |   Count |
+|-----------------------|---------|
+| Numerical Variables   |      10 |
+| Categorical Variables |      11 |
+
+Detailed list of duplicated rows (including indices):
+
+|       |   age | job         | marital   | education           | default   | housing   | loan   | contact   | month   | day_of_week   |   duration |   campaign |   pdays |   previous | poutcome    |   emp.var.rate |   cons.price.idx |   cons.conf.idx |   euribor3m |   nr.employed | y   |
+|-------|-------|-------------|-----------|---------------------|-----------|-----------|--------|-----------|---------|---------------|------------|------------|---------|------------|-------------|----------------|------------------|-----------------|-------------|---------------|-----|
+|  1265 |    39 | blue-collar | married   | basic.6y            | no        | no        | no     | telephone | may     | thu           |        124 |          1 |     999 |          0 | nonexistent |            1.1 |           93.994 |           -36.4 |       4.855 |        5191   | no  |
+|  1266 |    39 | blue-collar | married   | basic.6y            | no        | no        | no     | telephone | may     | thu           |        124 |          1 |     999 |          0 | nonexistent |            1.1 |           93.994 |           -36.4 |       4.855 |        5191   | no  |
+| 12260 |    36 | retired     | married   | unknown             | no        | no        | no     | telephone | jul     | thu           |         88 |          1 |     999 |          0 | nonexistent |            1.4 |           93.918 |           -42.7 |       4.966 |        5228.1 | no  |
+| 12261 |    36 | retired     | married   | unknown             | no        | no        | no     | telephone | jul     | thu           |         88 |          1 |     999 |          0 | nonexistent |            1.4 |           93.918 |           -42.7 |       4.966 |        5228.1 | no  |
+| 14155 |    27 | technician  | single    | professional.course | no        | no        | no     | cellular  | jul     | mon           |        331 |          2 |     999 |          0 | nonexistent |            1.4 |           93.918 |           -42.7 |       4.962 |        5228.1 | no  |
+| 14234 |    27 | technician  | single    | professional.course | no        | no        | no     | cellular  | jul     | mon           |        331 |          2 |     999 |          0 | nonexistent |            1.4 |           93.918 |           -42.7 |       4.962 |        5228.1 | no  |
+| 16819 |    47 | technician  | divorced  | high.school         | no        | yes       | no     | cellular  | jul     | thu           |         43 |          3 |     999 |          0 | nonexistent |            1.4 |           93.918 |           -42.7 |       4.962 |        5228.1 | no  |
+| 16956 |    47 | technician  | divorced  | high.school         | no        | yes       | no     | cellular  | jul     | thu           |         43 |          3 |     999 |          0 | nonexistent |            1.4 |           93.918 |           -42.7 |       4.962 |        5228.1 | no  |
+| 18464 |    32 | technician  | single    | professional.course | no        | yes       | no     | cellular  | jul     | thu           |        128 |          1 |     999 |          0 | nonexistent |            1.4 |           93.918 |           -42.7 |       4.968 |        5228.1 | no  |
+| 18465 |    32 | technician  | single    | professional.course | no        | yes       | no     | cellular  | jul     | thu           |        128 |          1 |     999 |          0 | nonexistent |            1.4 |           93.918 |           -42.7 |       4.968 |        5228.1 | no  |
+| 20072 |    55 | services    | married   | high.school         | unknown   | no        | no     | cellular  | aug     | mon           |         33 |          1 |     999 |          0 | nonexistent |            1.4 |           93.444 |           -36.1 |       4.965 |        5228.1 | no  |
+| 20216 |    55 | services    | married   | high.school         | unknown   | no        | no     | cellular  | aug     | mon           |         33 |          1 |     999 |          0 | nonexistent |            1.4 |           93.444 |           -36.1 |       4.965 |        5228.1 | no  |
+| 20531 |    41 | technician  | married   | professional.course | no        | yes       | no     | cellular  | aug     | tue           |        127 |          1 |     999 |          0 | nonexistent |            1.4 |           93.444 |           -36.1 |       4.966 |        5228.1 | no  |
+| 20534 |    41 | technician  | married   | professional.course | no        | yes       | no     | cellular  | aug     | tue           |        127 |          1 |     999 |          0 | nonexistent |            1.4 |           93.444 |           -36.1 |       4.966 |        5228.1 | no  |
+| 25183 |    39 | admin.      | married   | university.degree   | no        | no        | no     | cellular  | nov     | tue           |        123 |          2 |     999 |          0 | nonexistent |           -0.1 |           93.2   |           -42   |       4.153 |        5195.8 | no  |
+| 25217 |    39 | admin.      | married   | university.degree   | no        | no        | no     | cellular  | nov     | tue           |        123 |          2 |     999 |          0 | nonexistent |           -0.1 |           93.2   |           -42   |       4.153 |        5195.8 | no  |
+| 28476 |    24 | services    | single    | high.school         | no        | yes       | no     | cellular  | apr     | tue           |        114 |          1 |     999 |          0 | nonexistent |           -1.8 |           93.075 |           -47.1 |       1.423 |        5099.1 | no  |
+| 28477 |    24 | services    | single    | high.school         | no        | yes       | no     | cellular  | apr     | tue           |        114 |          1 |     999 |          0 | nonexistent |           -1.8 |           93.075 |           -47.1 |       1.423 |        5099.1 | no  |
+| 32505 |    35 | admin.      | married   | university.degree   | no        | yes       | no     | cellular  | may     | fri           |        348 |          4 |     999 |          0 | nonexistent |           -1.8 |           92.893 |           -46.2 |       1.313 |        5099.1 | no  |
+| 32516 |    35 | admin.      | married   | university.degree   | no        | yes       | no     | cellular  | may     | fri           |        348 |          4 |     999 |          0 | nonexistent |           -1.8 |           92.893 |           -46.2 |       1.313 |        5099.1 | no  |
+| 36950 |    45 | admin.      | married   | university.degree   | no        | no        | no     | cellular  | jul     | thu           |        252 |          1 |     999 |          0 | nonexistent |           -2.9 |           92.469 |           -33.6 |       1.072 |        5076.2 | yes |
+| 36951 |    45 | admin.      | married   | university.degree   | no        | no        | no     | cellular  | jul     | thu           |        252 |          1 |     999 |          0 | nonexistent |           -2.9 |           92.469 |           -33.6 |       1.072 |        5076.2 | yes |
+| 38255 |    71 | retired     | single    | university.degree   | no        | no        | no     | telephone | oct     | tue           |        120 |          1 |     999 |          0 | nonexistent |           -3.4 |           92.431 |           -26.9 |       0.742 |        5017.5 | no  |
+| 38281 |    71 | retired     | single    | university.degree   | no        | no        | no     | telephone | oct     | tue           |        120 |          1 |     999 |          0 | nonexistent |           -3.4 |           92.431 |           -26.9 |       0.742 |        5017.5 | no  |
+
+### data_overview
+
+
+=== Data Overview Table ===
+
+
+Overview for Data Type: int64
+
+|    | Column Name   | Data Type   |   Unique Count |   Missing Count |   Missing Percentage | Missing Value Category   |
+|----|---------------|-------------|----------------|-----------------|----------------------|--------------------------|
+|  0 | age           | int64       |             78 |               0 |                    0 | No Missing Values        |
+|  1 | duration      | int64       |           1544 |               0 |                    0 | No Missing Values        |
+|  2 | campaign      | int64       |             42 |               0 |                    0 | No Missing Values        |
+|  3 | pdays         | int64       |             27 |               0 |                    0 | No Missing Values        |
+|  4 | previous      | int64       |              8 |               0 |                    0 | No Missing Values        |
+
+Overview for Data Type: float64
+
+|    | Column Name    | Data Type   |   Unique Count |   Missing Count |   Missing Percentage | Missing Value Category   |
+|----|----------------|-------------|----------------|-----------------|----------------------|--------------------------|
+|  0 | emp.var.rate   | float64     |             10 |               0 |                    0 | No Missing Values        |
+|  1 | cons.price.idx | float64     |             26 |               0 |                    0 | No Missing Values        |
+|  2 | cons.conf.idx  | float64     |             26 |               0 |                    0 | No Missing Values        |
+|  3 | euribor3m      | float64     |            316 |               0 |                    0 | No Missing Values        |
+|  4 | nr.employed    | float64     |             11 |               0 |                    0 | No Missing Values        |
+
+Overview for Data Type: object
+
+|    | Column Name   | Data Type   |   Unique Count |   Missing Count |   Missing Percentage | Missing Value Category   |
+|----|---------------|-------------|----------------|-----------------|----------------------|--------------------------|
+|  0 | job           | object      |             12 |               0 |                    0 | No Missing Values        |
+|  1 | marital       | object      |              4 |               0 |                    0 | No Missing Values        |
+|  2 | education     | object      |              8 |               0 |                    0 | No Missing Values        |
+|  3 | default       | object      |              3 |               0 |                    0 | No Missing Values        |
+|  4 | housing       | object      |              3 |               0 |                    0 | No Missing Values        |
+|  5 | loan          | object      |              3 |               0 |                    0 | No Missing Values        |
+|  6 | contact       | object      |              2 |               0 |                    0 | No Missing Values        |
+|  7 | month         | object      |             10 |               0 |                    0 | No Missing Values        |
+|  8 | day_of_week   | object      |              5 |               0 |                    0 | No Missing Values        |
+|  9 | poutcome      | object      |              3 |               0 |                    0 | No Missing Values        |
+| 10 | y             | object      |              2 |               0 |                    0 | No Missing Values        |
+
+### outliers_summary
+
+
+=== Outliers Summary ===
+
+|   Index | Column         |   Outlier Count | Percentage   |
+|---------|----------------|-----------------|--------------|
+|       0 | age            |             468 | 1.14%        |
+|       1 | duration       |            2963 | 7.20%        |
+|       2 | campaign       |            2406 | 5.84%        |
+|       3 | pdays          |            1515 | 3.68%        |
+|       4 | previous       |            5625 | 13.66%       |
+|       5 | emp.var.rate   |               0 | 0.00%        |
+|       6 | cons.price.idx |               0 | 0.00%        |
+|       7 | cons.conf.idx  |             446 | 1.08%        |
+|       8 | euribor3m      |               0 | 0.00%        |
+|       9 | nr.employed    |               0 | 0.00%        |
+
+### summary_statistics_all
+
+Summary Statistics for All Numeric Columns:
+
+| Statistic                   |          age |     duration |     campaign |       pdays |     previous |   emp.var.rate |   cons.price.idx |   cons.conf.idx |    euribor3m |    nr.employed |
+|-----------------------------|--------------|--------------|--------------|-------------|--------------|----------------|------------------|-----------------|--------------|----------------|
+| Count                       | 41176        | 41176        | 41176        | 41176       | 41176        |  41176         |     41176        |    41176        | 41176        | 41176          |
+| Unique                      |    78        |  1544        |    42        |    27       |     8        |     10         |        26        |       26        |   316        |    11          |
+| Mean                        |    40.0238   |   258.316    |     2.56788  |   962.465   |     0.173013 |      0.0819215 |        93.5757   |      -40.5029   |     3.62129  |  5167.03       |
+| Std                         |    10.4207   |   259.305    |     2.77032  |   186.937   |     0.494964 |      1.57088   |         0.578839 |        4.62786  |     1.73444  |    72.2514     |
+| Min                         |    17        |     0        |     1        |     0       |     0        |     -3.4       |        92.201    |      -50.8      |     0.634    |  4963.6        |
+| 25%                         |    32        |   102        |     1        |   999       |     0        |     -1.8       |        93.075    |      -42.7      |     1.344    |  5099.1        |
+| 50%                         |    38        |   180        |     2        |   999       |     0        |      1.1       |        93.749    |      -41.8      |     4.857    |  5191          |
+| 75%                         |    47        |   319        |     3        |   999       |     0        |      1.4       |        93.994    |      -36.4      |     4.961    |  5228.1        |
+| Max                         |    98        |  4918        |    56        |   999       |     7        |      1.4       |        94.767    |      -26.9      |     5.045    |  5228.1        |
+| Mode                        |    31        |    85        |     1        |   999       |     0        |      1.4       |        93.994    |      -36.4      |     4.857    |  5228.1        |
+| Range                       |    81        |  4918        |    55        |   999       |     7        |      4.8       |         2.566    |       23.9      |     4.411    |   264.5        |
+| IQR                         |    15        |   217        |     2        |     0       |     0        |      3.2       |         0.919    |        6.3      |     3.617    |   129          |
+| Variance                    |   108.591    | 67239.2      |     7.67466  | 34945.5     |     0.24499  |      2.46767   |         0.335055 |       21.4171   |     3.00827  |  5220.26       |
+| Skewness                    |     0.78456  |     3.26281  |     4.76204  |    -4.92139 |     3.8314   |     -0.724061  |        -0.230853 |        0.302876 |    -0.709194 |    -1.04432    |
+| Kurtosis                    |     0.791113 |    20.2438   |    36.9719   |    22.2216  |    20.1022   |     -1.0627    |        -0.829851 |       -0.359097 |    -1.40679  |    -0.00353967 |
+| Shapiro-Wilk Test Statistic |     0.95728  |     0.721683 |     0.557869 |     0.18298 |     0.391309 |      0.762163  |         0.933932 |        0.923858 |     0.686311 |     0.787794   |
+| Shapiro-Wilk Test p-value   |     0        |     0        |     0        |     0       |     0        |      0         |         0        |        0        |     0        |     0          |
+
+### categorical_summary
+
+Categorical Summary:
+
+| Statistic      | job    | marital   | education         | default   | housing   | loan   | contact   | month   | day_of_week   | poutcome    | y      |
+|----------------|--------|-----------|-------------------|-----------|-----------|--------|-----------|---------|---------------|-------------|--------|
+| Count          | 41176  | 41176     | 41176             | 41176     | 41176     | 41176  | 41176     | 41176   | 41176         | 41176       | 41176  |
+| Unique         | 12     | 4         | 8                 | 3         | 3         | 3      | 2         | 10      | 5             | 3           | 2      |
+| Top            | admin. | married   | university.degree | no        | yes       | no     | cellular  | may     | thu           | nonexistent | no     |
+| Frequency      | 10419  | 24921     | 12164             | 32577     | 21571     | 33938  | 26135     | 13767   | 8618          | 35551       | 36537  |
+| Top Percentage | 25.30% | 60.52%    | 29.54%            | 79.12%    | 52.39%    | 82.42% | 63.47%    | 33.43%  | 20.93%        | 86.34%      | 88.73% |
+

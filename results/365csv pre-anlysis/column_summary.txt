@@ -1,0 +1,26 @@
+
+======== Column Summary: ===========
+
+Index Attribute                      Data Type       Range                          Distinct Count
+----- ------------------------------ --------------- ------------------------------ ---------------
+1     age                            int64           17 - 98                        78
+2     duration                       int64           0 - 4918                       1544
+3     campaign                       int64           1 - 56                         42
+4     pdays                          int64           0 - 999                        27
+5     previous                       int64           0 - 7                          8
+6     job                            object          N/A                            12
+7     marital                        object          N/A                            4
+8     education                      object          N/A                            8
+9     default                        object          N/A                            3
+10    housing                        object          N/A                            3
+11    loan                           object          N/A                            3
+12    contact                        object          N/A                            2
+13    month                          object          N/A                            10
+14    day_of_week                    object          N/A                            5
+15    poutcome                       object          N/A                            3
+16    y                              object          N/A                            2
+17    emp.var.rate                   float64         -3.4 - 1.4                     10
+18    cons.price.idx                 float64         92.201 - 94.767                26
+19    cons.conf.idx                  float64         -50.8 - -26.9                  26
+20    euribor3m                      float64         0.634 - 5.045                  316
+21    nr.employed                    float64         4963.6 - 5228.1                11
