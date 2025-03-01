@@ -38,8 +38,8 @@ This project analyzes direct phone marketing campaigns by a Portuguese bank (200
 ## Installation
 1. **Clone the Repository**:
    ```bash
-   git clone [REPO_URL]
-   cd PROTUGESEBANK
+   git clone [[REPO_URL]](https://github.com/dhaneshbb/ProtugeseBank).git
+   cd ProtugeseBank
    ```
 2. **Install Dependencies**:
    ```bash
