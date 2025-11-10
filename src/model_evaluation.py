@@ -1,10 +1,23 @@
 import time
-import pandas as pd
-import numpy as np
+
 import matplotlib.pyplot as plt
-from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score, confusion_matrix, roc_curve, auc, precision_recall_curve, ConfusionMatrixDisplay
+import numpy as np
+import pandas as pd
 from sklearn.calibration import calibration_curve
-from sklearn.model_selection import GridSearchCV, cross_val_score, StratifiedKFold
+from sklearn.metrics import (
+    ConfusionMatrixDisplay,
+    accuracy_score,
+    auc,
+    confusion_matrix,
+    f1_score,
+    precision_recall_curve,
+    precision_score,
+    recall_score,
+    roc_auc_score,
+    roc_curve,
+)
+from sklearn.model_selection import GridSearchCV, StratifiedKFold, cross_val_score
+
 
 def evaluate_model(model, X_train, y_train, X_test, y_test):
     start_time = time.time()
@@ -24,7 +37,9 @@ def evaluate_model(model, X_train, y_train, X_test, y_test):
     f1_metric = f1_score(y_test, y_pred)
     acc_train = accuracy_score(y_train, y_pred_train)
     strat_kfold = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
-    cv_f1 = cross_val_score(model, X_train, y_train, cv=strat_kfold, scoring='f1').mean()
+    cv_f1 = cross_val_score(
+        model, X_train, y_train, cv=strat_kfold, scoring="f1"
+    ).mean()
     overfit = acc_train - acc
     return {
         "Training Time (seconds)": round(train_time, 3),
@@ -39,17 +54,22 @@ def evaluate_model(model, X_train, y_train, X_test, y_test):
         "False Negatives (FN)": fn,
         "True Positives (TP)": tp,
         "Training Accuracy": acc_train,
-        "Overfit (Train - Test Acc)": overfit
+        "Overfit (Train - Test Acc)": overfit,
     }
+
+
 def tune_hyperparameters(model_name, model, param_grid, X_train, y_train):
     print(f"\n Tuning Hyperparameters for {model_name}...")
-    grid_search = GridSearchCV(model, param_grid, cv=3, scoring='f1', n_jobs=-1, verbose=2)
+    grid_search = GridSearchCV(
+        model, param_grid, cv=3, scoring="f1", n_jobs=-1, verbose=2
+    )
     grid_search.fit(X_train, y_train)
     best_params = grid_search.best_params_
     print(f" Best Parameters for {model_name}: {best_params}")
     best_model = model.set_params(**best_params)
     best_model.fit(X_train, y_train)
     return best_model, best_params
+
 
 def threshold_analysis(model, X_test, y_test, thresholds=np.arange(0.1, 1.0, 0.1)):
     y_probs = model.predict_proba(X_test)[:, 1]
@@ -61,35 +81,43 @@ def threshold_analysis(model, X_test, y_test, thresholds=np.arange(0.1, 1.0, 0.1
         f1 = f1_score(y_test, y_pred)
         accuracy = accuracy_score(y_test, y_pred)
         tn, fp, fn, tp = confusion_matrix(y_test, y_pred).ravel()
-        results.append({
-            "Threshold": round(threshold, 2),
-            "Precision": round(precision, 4),
-            "Recall": round(recall, 4),
-            "F1-Score": round(f1, 4),
-            "Accuracy": round(accuracy, 4),
-            "True Negatives (TN)": tn,
-            "False Positives (FP)": fp,
-            "False Negatives (FN)": fn,
-            "True Positives (TP)": tp
-        })
+        results.append(
+            {
+                "Threshold": round(threshold, 2),
+                "Precision": round(precision, 4),
+                "Recall": round(recall, 4),
+                "F1-Score": round(f1, 4),
+                "Accuracy": round(accuracy, 4),
+                "True Negatives (TN)": tn,
+                "False Positives (FP)": fp,
+                "False Negatives (FN)": fn,
+                "True Positives (TP)": tp,
+            }
+        )
     df_results = pd.DataFrame(results)
     best_threshold = df_results.loc[df_results["F1-Score"].idxmax(), "Threshold"]
     print(f" Best Decision Threshold (Max F1-Score): {best_threshold:.2f}")
     return df_results, best_threshold
 
-def cross_validation_analysis_table(model, X_train, y_train, cv_folds=5, scoring_metric="f1"):
+
+def cross_validation_analysis_table(
+    model, X_train, y_train, cv_folds=5, scoring_metric="f1"
+):
     strat_kfold = StratifiedKFold(n_splits=cv_folds, shuffle=True, random_state=42)
-    scores = cross_val_score(model, X_train, y_train, cv=strat_kfold, scoring=scoring_metric)
-    cv_results_df = pd.DataFrame({
-        "Fold": [f"Fold {i+1}" for i in range(cv_folds)],
-        "F1-Score": scores
-    })
+    scores = cross_val_score(
+        model, X_train, y_train, cv=strat_kfold, scoring=scoring_metric
+    )
+    cv_results_df = pd.DataFrame(
+        {"Fold": [f"Fold {i+1}" for i in range(cv_folds)], "F1-Score": scores}
+    )
     cv_results_df.loc["Mean"] = ["Mean", np.mean(scores)]
     cv_results_df.loc["Std"] = ["Standard Deviation", np.std(scores)]
     return cv_results_df
 
+
 def plot_all_evaluation_metrics(model, X_test, y_test):
     import scikitplot as skplt
+
     y_probs = model.predict_proba(X_test)[:, 1]
     precision, recall, thresholds = precision_recall_curve(y_test, y_probs)
     fpr, tpr, _ = roc_curve(y_test, y_probs)
@@ -106,7 +134,9 @@ def plot_all_evaluation_metrics(model, X_test, y_test):
     axes[0, 0].set_ylabel("Actual Probability")
     axes[0, 0].legend()
     axes[0, 0].grid()
-    skplt.metrics.plot_cumulative_gain(y_test, model.predict_proba(X_test), ax=axes[0, 1])
+    skplt.metrics.plot_cumulative_gain(
+        y_test, model.predict_proba(X_test), ax=axes[0, 1]
+    )
     axes[0, 1].set_title("Cumulative Gains Curve")
     y_probs_1 = y_probs[y_test == 1]
     y_probs_0 = y_probs[y_test == 0]
@@ -152,6 +182,7 @@ def plot_all_evaluation_metrics(model, X_test, y_test):
     plt.tight_layout()
     plt.show()
 
+
 def show_default_feature_importance(models, X_train):
     feature_importance_df = pd.DataFrame({"Feature": X_train.columns})
     for model_name, model in models.items():
@@ -159,6 +190,8 @@ def show_default_feature_importance(models, X_train):
             feature_importance_df[model_name] = model.feature_importances_
         else:
             print(f" Feature importance not available for {model_name}")
-    feature_importance_df = feature_importance_df.sort_values(by="LightGBM", ascending=False)
+    feature_importance_df = feature_importance_df.sort_values(
+        by="LightGBM", ascending=False
+    )
     print("\n Default Feature Importance Across Models:")
     print(feature_importance_df.to_markdown(tablefmt="pipe", index=False))

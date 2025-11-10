@@ -1,5 +1,1 @@
-__all__ = [
-    'utils',
-    'statistical_analysis',
-    'model_evaluation'
-]
+__all__ = ["utils", "statistical_analysis", "model_evaluation"]
